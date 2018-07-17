@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "com.github.johnrengelman.shadow" version "2.0.1"
+}
+
+group 'incognito-record'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+ext {
+    awsLambdaVersion = '1.2.0'
+    slf4jVersion = '1.7.13'
+    log4jVersion = '2.10.0'
+    jacksonVersion = '2.9.3'
+
+    jUnitVersion = '4.12'
+}
+
+dependencies {
+    implementation "com.amazonaws:aws-lambda-java-core:${awsLambdaVersion}"
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+    implementation "org.apache.logging.log4j:log4j-api:${log4jVersion}"
+    implementation "org.apache.logging.log4j:log4j-slf4j-impl:${log4jVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonVersion}"
+
+    testImplementation "junit:junit:${jUnitVersion}"
+}
+
+String mainClass = 'nz.co.incognito.record.MainHandler'
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClass
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
