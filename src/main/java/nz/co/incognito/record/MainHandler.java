@@ -11,6 +11,6 @@ public class MainHandler implements RequestHandler {
     @Override
     public Object handleRequest(Object input, Context context) {
         LOG.info(input.toString(), context.toString());
-        return null;
+        return input.toString();
     }
 }
