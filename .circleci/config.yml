@@ -46,4 +46,4 @@ jobs:
       # deploy to aws lambda
 #      - run: aws lambda create-function --region ap-southeast-2 --function-name incognito-record-get-posts-lambda --runtime java8 --handler nz.co.incognito.record.MainHandler::handleRequest --memory-size 128 --zip-file "fileb://build/libs/incognito-record-1.0-SNAPSHOT-all.jar" --role arn:aws:iam::445825595815:role/lambda_basic_execution
 
-      - run: aws lambda update-function-code --region ap-southeast-2 --function-name incognito-record-get-posts-lambda --zip-file fileb://build/libs/incognito-record-1.1-SNAPSHOT-all.jar
+      - run: aws lambda update-function-code --region ap-southeast-2 --function-name incognito-record-get-posts-lambdas --zip-file fileb://build/libs/incognito-record-1.1-SNAPSHOT-all.jar
