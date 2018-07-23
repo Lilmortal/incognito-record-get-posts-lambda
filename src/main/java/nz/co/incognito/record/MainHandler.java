@@ -11,6 +11,6 @@ public class MainHandler implements RequestHandler {
     @Override
     public Object handleRequest(Object input, Context context) {
         LOG.info(input.toString(), context.toString());
-        return input.toString();
+        return input.toString() + " see if lambda is updated.";
     }
 }
