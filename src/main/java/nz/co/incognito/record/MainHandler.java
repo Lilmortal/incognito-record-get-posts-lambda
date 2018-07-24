@@ -19,6 +19,9 @@ public class MainHandler implements RequestStreamHandler {
             LOG.info(line);
         }
 
+        LOG.info("Test that it works");
+        LOG.warn("AAAA");
+        OutputStreamWriter writer = new OutputStreamWriter(outputStream, "UTF-8");
         outputStream.write("Test".getBytes());
         outputStream.close();
     }
