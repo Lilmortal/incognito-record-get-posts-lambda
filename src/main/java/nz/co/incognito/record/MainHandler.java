@@ -20,5 +20,6 @@ public class MainHandler implements RequestStreamHandler {
         }
 
         outputStream.write("Test".getBytes());
+        outputStream.close();
     }
 }

@@ -33,13 +33,12 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
-      # run tests!
+      # run tests
       - run: gradle test
 
       # install aws cli
       - run: sudo apt-get update && sudo apt-get install -y awscli
       - run: aws --version
-      - run: aws s3 ls
 
       - run: gradle shadowJar
 
